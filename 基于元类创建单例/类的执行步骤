@@ -1,0 +1,19 @@
+1、对象时类创建，创建对象时类的__init__方法自动执行，对象的__call__方法
+2、类是type创建，创建类时候type的__init__方法执行，类()执行type的__call__方法（类的__new__方法，类的__init__方法）
+
+第0步：执行type的__init__方法[类是type的对象]
+
+class Foo()
+
+    def __init__(self):
+        pass
+
+    def __call__(self,*args,**kwargs):
+        pass
+
+#第1步：执行type的__call__方法
+    1.1调用Foo类的（type的对象）的__new__方法，用于创建对象。
+    1.2调用Foo类（type的对象）的__init__方法，用于对象的初始化
+
+第2部：执行Foo的__call__方法
+obj()
